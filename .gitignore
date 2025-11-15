@@ -15,7 +15,7 @@ Thumbs.db
 # DEFINITION GUIDE
 docs/
 CLAUDE.md 
-
+DEPLOYMENT.md 
 # Build output (si en algún momento usás Vite/React/Astro)
 dist/
 build/
