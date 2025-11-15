@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gustavo Gennari - Java Developer | AI Enthusiast | Creator">
+    <title>Gustavo Gennari - Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav__content">
+                <a href="#hero" class="nav__logo">GG</a>
+                <ul class="nav__menu">
+                    <li><a href="#about" class="nav__link">About</a></li>
+                    <li><a href="#skills" class="nav__link">Skills</a></li>
+                    <li><a href="#experience" class="nav__link">Experience</a></li>
+                    <li><a href="#projects" class="nav__link">Projects</a></li>
+                    <li><a href="#contact" class="nav__link nav__link--cta">Contact</a></li>
+                </ul>
+                <button class="nav__toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <div class="hero__image-wrapper">
+                    <div class="hero__image">
+                        <!-- Profile photo placeholder -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+                            <circle cx="100" cy="100" r="100" fill="#4DA1FF" opacity="0.1"/>
+                            <circle cx="100" cy="80" r="30" fill="#4DA1FF"/>
+                            <path d="M50 150 Q50 120 100 120 Q150 120 150 150 L150 200 L50 200 Z" fill="#4DA1FF"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="hero__text">
+                    <h1 class="hero__title">Gustavo Gennari</h1>
+                    <p class="hero__tagline">Java Developer | AI Enthusiast | Creator</p>
+                    <p class="hero__description">
+                        Building scalable solutions with Java and Spring Boot, while exploring the frontiers of AI and machine learning.
+                    </p>
+                    <div class="hero__cta">
+                        <a href="#contact" class="btn btn--primary">Get in Touch</a>
+                        <a href="#projects" class="btn btn--secondary">View Projects</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section__title">About Me</h2>
+            <div class="about__content">
+                <p class="about__text">
+                    I'm a passionate Java developer with a strong foundation in backend development and a growing expertise in artificial intelligence.
+                    My journey in software development has led me to work with cutting-edge technologies like Spring Boot, Python, and various AI frameworks.
+                </p>
+                <p class="about__text">
+                    Beyond coding, I'm fascinated by creative technologies. I explore 3D modeling with Blender, game development with Unity,
+                    and systems programming with Rust. My goal is to bridge the gap between robust enterprise solutions and innovative AI applications.
+                </p>
+                <p class="about__text">
+                    I'm constantly learning and pushing the boundaries of what's possible with technology.
+                    I believe in clean code, continuous improvement, and the power of collaboration.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section__title">Skills & Technologies</h2>
+            <div class="skills__grid">
+                <div class="skill-card">
+                    <div class="skill-card__icon">☕</div>
+                    <h3 class="skill-card__title">Backend Development</h3>
+                    <p class="skill-card__description">Java, Spring Boot, Spring Framework</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card__icon">🐍</div>
+                    <h3 class="skill-card__title">Python & AI</h3>
+                    <p class="skill-card__description">Python, Machine Learning, AI Frameworks</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card__icon">💾</div>
+                    <h3 class="skill-card__title">Databases</h3>
+                    <p class="skill-card__description">SQL, Database Design, Query Optimization</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card__icon">🦀</div>
+                    <h3 class="skill-card__title">Systems Programming</h3>
+                    <p class="skill-card__description">Rust (basics), Low-level Programming</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card__icon">🎮</div>
+                    <h3 class="skill-card__title">Creative Tech</h3>
+                    <p class="skill-card__description">Unity, Game Development</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card__icon">🎨</div>
+                    <h3 class="skill-card__title">3D Modeling</h3>
+                    <p class="skill-card__description">Blender, 3D Design</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section__title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-item__marker"></div>
+                    <div class="timeline-item__content">
+                        <span class="timeline-item__period">2020 — Present</span>
+                        <h3 class="timeline-item__title">Java Developer</h3>
+                        <p class="timeline-item__company">Accenture</p>
+                        <p class="timeline-item__description">
+                            Developing enterprise-level applications using Java and Spring Boot.
+                            Working on microservices architecture, RESTful APIs, and cloud-based solutions.
+                            Collaborating with cross-functional teams to deliver high-quality software solutions.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-item__marker"></div>
+                    <div class="timeline-item__content">
+                        <span class="timeline-item__period">2020 — 2023</span>
+                        <h3 class="timeline-item__title">Software Developer</h3>
+                        <p class="timeline-item__company">Previous Experience</p>
+                        <p class="timeline-item__description">
+                            Worked on various software development projects, gaining expertise in full-stack development,
+                            database management, and agile methodologies. Contributed to both frontend and backend implementations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section__title">Featured Projects</h2>
+            <div class="projects__grid">
+                <div class="project-card">
+                    <div class="project-card__image">
+                        <div class="project-card__placeholder">🚀</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">AI-Powered Application</h3>
+                        <p class="project-card__description">
+                            Machine learning application leveraging Python and AI frameworks to solve real-world problems.
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">AI</span>
+                            <span class="tag">ML</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card__image">
+                        <div class="project-card__placeholder">⚡</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Spring Boot Microservices</h3>
+                        <p class="project-card__description">
+                            Scalable microservices architecture built with Spring Boot, implementing best practices and design patterns.
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">Microservices</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card__image">
+                        <div class="project-card__placeholder">🎮</div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Unity Game Project</h3>
+                        <p class="project-card__description">
+                            Interactive game developed with Unity, showcasing creative problem-solving and game mechanics design.
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="tag">Unity</span>
+                            <span class="tag">C#</span>
+                            <span class="tag">Game Dev</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section__title">Get in Touch</h2>
+            <div class="contact__content">
+                <p class="contact__text">
+                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                </p>
+                <a href="mailto:gfgustavo2015@gmail.com" class="contact__email">
+                    gfgustavo2015@gmail.com
+                </a>
+                <div class="contact__cta">
+                    <a href="mailto:gfgustavo2015@gmail.com" class="btn btn--primary">Send Email</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">
+                © 2025 Gustavo Gennari. Built with passion and code.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

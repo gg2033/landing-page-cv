@@ -1,0 +1,31 @@
+# Operating System
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.log
+
+# DEFINITION GUIDE
+docs/
+CLAUDE.md 
+
+# Build output (si en algún momento usás Vite/React/Astro)
+dist/
+build/
+out/
+.next/
+.vercel/
+
+
+# Archivos de entorno (por si usás envs)
+.env
+.env.local
+.env.development
+.env.production
