@@ -1,15 +1,48 @@
 /* ===================================
    CSS Variables - Design System
    =================================== */
-:root {
-    /* Colors */
+
+/* Light Theme (Default) */
+:root,
+[data-theme="light"] {
+    /* Colors - Light Theme */
+    --color-background: #F9F9F9;
+    --color-surface: #FFFFFF;
+    --color-surface-light: #FFFFFF;
     --color-primary: #2E2E2E;
     --color-secondary: #696969;
     --color-accent: #4DA1FF;
-    --color-background: #F9F9F9;
+    --color-border: #E5E5E5;
     --color-white: #FFFFFF;
-    --color-light-gray: #E5E5E5;
 
+    /* Shadows - Light Theme */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-glow: 0 0 20px rgba(77, 161, 255, 0.15);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    /* Colors - Dark Theme */
+    --color-background: #0A0A0A;
+    --color-surface: #1A1A1A;
+    --color-surface-light: #252525;
+    --color-primary: #E8E8E8;
+    --color-secondary: #A0A0A0;
+    --color-accent: #4DA1FF;
+    --color-border: #2A2A2A;
+    --color-white: #FFFFFF;
+
+    /* Shadows - Dark Theme */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 20px rgba(77, 161, 255, 0.15);
+}
+
+/* Shared Variables */
+:root {
     /* Typography */
     --font-title: 'Poppins', sans-serif;
     --font-body: 'Inter', sans-serif;
@@ -32,14 +65,14 @@
     --radius-md: 14px;
     --radius-full: 50px;
 
-    /* Shadows */
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
-
     /* Layout */
     --max-width: 900px;
     --transition: all 0.3s ease;
+}
+
+/* Smooth theme transition */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ===================================
@@ -155,8 +188,12 @@ section {
     right: 0;
     background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    box-shadow: var(--shadow-sm);
+    border-bottom: 1px solid var(--color-border);
     z-index: 1000;
+}
+
+[data-theme="dark"] .nav {
+    background-color: rgba(10, 10, 10, 0.95);
 }
 
 .nav__content {
@@ -164,6 +201,12 @@ section {
     justify-content: space-between;
     align-items: center;
     padding: var(--spacing-sm) 0;
+}
+
+.nav__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
 }
 
 .nav__logo {
@@ -220,12 +263,44 @@ section {
 }
 
 /* ===================================
+   Theme Toggle Button
+   =================================== */
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--color-border);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 0;
+}
+
+.theme-toggle:hover {
+    border-color: var(--color-accent);
+    transform: rotate(20deg);
+}
+
+.theme-toggle__icon {
+    font-size: 20px;
+    line-height: 1;
+    transition: var(--transition);
+}
+
+[data-theme="dark"] .theme-toggle__icon {
+    content: '☀️';
+}
+
+/* ===================================
    Hero Section
    =================================== */
 .hero {
     padding-top: calc(var(--spacing-2xl) + 60px);
     padding-bottom: var(--spacing-2xl);
-    background: linear-gradient(135deg, #F9F9F9 0%, #FFFFFF 100%);
+    background: linear-gradient(135deg, var(--color-background) 0%, var(--color-surface) 100%);
 }
 
 .hero__content {
@@ -246,8 +321,9 @@ section {
     height: 200px;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    background-color: var(--color-white);
+    box-shadow: var(--shadow-glow);
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-border);
 }
 
 .hero__image svg {
@@ -287,7 +363,7 @@ section {
    About Section
    =================================== */
 .about {
-    background-color: var(--color-white);
+    background-color: var(--color-surface);
 }
 
 .about__content {
@@ -316,17 +392,18 @@ section {
 }
 
 .skill-card {
-    background-color: var(--color-white);
+    background-color: var(--color-surface-light);
     padding: var(--spacing-md);
     border-radius: var(--radius-md);
-    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
     text-align: center;
     transition: var(--transition);
 }
 
 .skill-card:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-glow);
 }
 
 .skill-card__icon {
@@ -349,7 +426,7 @@ section {
    Experience Section
    =================================== */
 .experience {
-    background-color: var(--color-white);
+    background-color: var(--color-surface);
 }
 
 .timeline {
@@ -386,8 +463,8 @@ section {
     height: 18px;
     border-radius: 50%;
     background-color: var(--color-accent);
-    border: 4px solid var(--color-white);
-    box-shadow: var(--shadow-sm);
+    border: 4px solid var(--color-surface);
+    box-shadow: var(--shadow-glow);
 }
 
 .timeline-item__period {
@@ -426,16 +503,17 @@ section {
 }
 
 .project-card {
-    background-color: var(--color-white);
+    background-color: var(--color-surface-light);
     border-radius: var(--radius-md);
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
     transition: var(--transition);
 }
 
 .project-card:hover {
     transform: translateY(-6px);
-    box-shadow: var(--shadow-lg);
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-glow);
 }
 
 .project-card__image {
@@ -476,18 +554,19 @@ section {
 .tag {
     display: inline-block;
     padding: 4px 12px;
-    background-color: var(--color-background);
+    background-color: rgba(77, 161, 255, 0.1);
     color: var(--color-accent);
     font-size: 12px;
     font-weight: 500;
     border-radius: var(--radius-full);
+    border: 1px solid rgba(77, 161, 255, 0.2);
 }
 
 /* ===================================
    Contact Section
    =================================== */
 .contact {
-    background-color: var(--color-white);
+    background-color: var(--color-surface);
 }
 
 .contact__content {
@@ -605,12 +684,20 @@ section {
         top: 60px;
         left: 0;
         right: 0;
-        background-color: var(--color-white);
+        background-color: var(--color-surface);
         flex-direction: column;
         padding: var(--spacing-md);
-        box-shadow: var(--shadow-md);
+        border-bottom: 1px solid var(--color-border);
         transform: translateY(-120%);
         transition: var(--transition);
+    }
+
+    .nav__actions {
+        order: 3;
+    }
+
+    .nav__toggle {
+        display: flex;
     }
 
     .nav__menu.active {

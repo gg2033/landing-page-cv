@@ -4,6 +4,56 @@
  */
 
 // ===================================
+// Theme Toggle (Dark/Light Mode)
+// ===================================
+
+const initThemeToggle = () => {
+    const themeToggle = document.querySelector('.theme-toggle');
+    const themeIcon = document.querySelector('.theme-toggle__icon');
+    const html = document.documentElement;
+
+    // Get saved theme from localStorage or system preference
+    const getSavedTheme = () => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            return savedTheme;
+        }
+
+        // Check system preference
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        return prefersDark ? 'dark' : 'light';
+    };
+
+    // Apply theme
+    const applyTheme = (theme) => {
+        html.setAttribute('data-theme', theme);
+        themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+        localStorage.setItem('theme', theme);
+    };
+
+    // Initialize theme
+    const currentTheme = getSavedTheme();
+    applyTheme(currentTheme);
+
+    // Toggle theme on button click
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+        });
+    }
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        // Only auto-switch if user hasn't manually set a preference
+        if (!localStorage.getItem('theme')) {
+            applyTheme(e.matches ? 'dark' : 'light');
+        }
+    });
+};
+
+// ===================================
 // Navigation & Mobile Menu
 // ===================================
 
@@ -198,6 +248,7 @@ const init = () => {
     // Wait for DOM to be fully loaded
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
+            initThemeToggle();
             initNavigation();
             initSmoothScroll();
             initScrollAnimations();
@@ -206,6 +257,7 @@ const init = () => {
             initEmailCopy();
         });
     } else {
+        initThemeToggle();
         initNavigation();
         initSmoothScroll();
         initScrollAnimations();
@@ -239,6 +291,7 @@ const debounce = (func, wait = 20) => {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         init,
+        initThemeToggle,
         initNavigation,
         initSmoothScroll,
         initScrollAnimations
